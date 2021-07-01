@@ -1,14 +1,14 @@
-import React, { useState } from 'react';
-import TodoList from './TodoList';
+import React from 'react';
+import Joke from './Joke';
 import './index.css'
 
 
 
 function App() {
-  const [characters, characterData] = useState([ 'Todo 1' ])
+
   return (
-    <div>
-      <TodoList characters={characters} />
+    <div className="App">
+      <Joke />
       
     </div>
   );

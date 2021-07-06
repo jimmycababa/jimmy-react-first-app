@@ -4,13 +4,14 @@ import axios from 'axios';
 
 
 export default function Joke() {
-
+console.log('This component has been rendered');
    
 
       const [joke, setJoke] = useState('')
+      console.log("this component has been rendered")
 
       useEffect( () => {
-          axios.get('https://icanhazdadjoke.com/',{headers: {Accept: 'application/json'}})
+          return axios.get('https://icanhazdadjoke.com/',{headers: {Accept: 'application/json'}})
           .then(res => setJoke(res.data))
           .catch(err => console.log(err))
       }, [])

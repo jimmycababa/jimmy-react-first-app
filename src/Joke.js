@@ -8,7 +8,7 @@ console.log('This component has been rendered');
    
 
       const [joke, setJoke] = useState('')
-      console.log("this component has been rendered")
+      
 
       useEffect( () => {
           return axios.get('https://icanhazdadjoke.com/',{headers: {Accept: 'application/json'}})

@@ -9,14 +9,13 @@ export default function NorrisJoke() {
       
 
       useEffect( () => {
-          axios.get('http://api.icndb.com/jokes/random',{headers: {Accept: 'application/json'}})
-          .then(res => (res.data))
-          .catch(err => console.log(err))
+        fetchJoke1()
       }, [])
 
-        const fetchJoke1 = () => {
-          axios.get('http://api.icndb.com/jokes/random',{headers: {Accept: 'application/json'}})
+        function fetchJoke1 (){
+          axios.get('https://api.chucknorris.io/jokes/random')//instead of chuck norris api, your own ruby backend
           .then(res => (res.data))
+          .then(data => setJoke1(data.value)) 
           .catch(err => console.log(err))
         }
     return (
@@ -24,7 +23,7 @@ export default function NorrisJoke() {
             <div className="card">
   <h5 className="card-header">Chuck Norris Joke</h5>
   <div className="card-body">
-    <p className="card-text">{joke1.joke1}</p>
+    <p className="card-text">{joke1}</p>
     <a href="#" className="btn btn-primary" onClick={fetchJoke1}>Get Joke</a>
   </div>
 </div>

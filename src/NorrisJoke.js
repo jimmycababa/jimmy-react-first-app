@@ -9,14 +9,14 @@ export default function NorrisJoke() {
       
 
       useEffect( () => {
-          axios.get('https://api.chucknorris.io/jokes/random')
-          .then(res => (res.json))
+          axios.get('http://api.icndb.com/jokes/random',{headers: {Accept: 'application/json'}})
+          .then(res => (res.data))
           .catch(err => console.log(err))
       }, [])
 
         const fetchJoke1 = () => {
-            axios.get('https://api.chucknorris.io/jokes/random')
-          .then(res => (res.json))
+          axios.get('http://api.icndb.com/jokes/random',{headers: {Accept: 'application/json'}})
+          .then(res => (res.data))
           .catch(err => console.log(err))
         }
     return (

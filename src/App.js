@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
 import Joke from './Joke';
 import './index.css'
@@ -9,11 +9,16 @@ import Home from './Home';
 
 
 function App() {
+  const [username, setUsername] = useState(null);
+
+  function handleSignIn(name){
+    setUsername(name);
+  }
 
   return (
     <Router>
       <div className="App">
-        <Navbar />
+        <Navbar username={username} signIn={handleSignIn}/>
         <Switch>
           <Route path="/Home" exact component={Home}/>
           <Route path="/DadJoke" exact component={Joke}/> 

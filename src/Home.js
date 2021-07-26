@@ -9,7 +9,7 @@ export default function Home() {
 
     return (
         <div>
-            <form onSubmit={handleSubmit(onSubmit)}>
+            <form onSubmit={() => handleSubmit(onSubmit)}>
                 <label>
                     First Name:
                     <input {...register("FirstName")} />

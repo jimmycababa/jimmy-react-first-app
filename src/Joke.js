@@ -28,7 +28,7 @@ console.log('This component has been rendered');
   <h5 className="card-header">Dad Joke</h5>
   <div className="card-body">
     <p className="card-text">{joke.joke}</p>
-    <a href="#" className="btn btn-primary" onClick={fetchJoke}>Get Joke</a>
+    <button className="btn btn-primary" onClick={fetchJoke}>Get Joke</button>
   </div>
 </div>
         </div>

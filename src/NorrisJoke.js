@@ -24,7 +24,7 @@ export default function NorrisJoke() {
   <h5 className="card-header">Chuck Norris Joke</h5>
   <div className="card-body">
     <p className="card-text">{joke1}</p>
-    <a href="#" className="btn btn-primary" onClick={fetchJoke1}>Get Joke</a>
+    <button className="btn btn-primary" onClick={fetchJoke1}>Get Joke</button>
   </div>
 </div>
         </div>

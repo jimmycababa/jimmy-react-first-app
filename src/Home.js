@@ -1,25 +1,36 @@
 import React from 'react';
-import { useForm } from 'react-hook-form';
+import { useAuth0 } from '@auth0/auth0-react';
 
 export default function Home() {
-    const {register, handleSubmit} = useForm();
-    const onSubmit = (d) => alert(JSON.stringify(d))
-
-
+    const {
+        isLoading,
+        isAuthenticated,
+        error,
+        user,
+        loginWithRedirect,
+        logout,
+      } = useAuth0();
+    
+      if (isLoading) {
+        return <div>Loading...</div>;
+      }
+      if (error) {
+        return <div>Oops... {error.message}</div>;
+      }
+    
+      if (isAuthenticated) {
 
     return (
         <div>
-            <form onSubmit={() => handleSubmit(onSubmit)}>
-                <label>
-                    First Name:
-                    <input {...register("FirstName")} />
-                </label>
-                <label>
-                    Last Name:
-                    <input {...register("LastName")} />
-                </label>
-                <input type="submit" value="submit" />
-            </form>
-        </div>
-    )
+        Hello {user.name}{' '}
+        <button onClick={() => logout({ returnTo: window.location.origin })}>
+          Log out
+        </button>
+      </div>
+    );
+  } else {
+    return <button onClick={loginWithRedirect}>Log in</button>;
+  }
+
+    
 }

@@ -1,12 +1,17 @@
-import React, {useState} from 'react'
 
-export default function Navbar(props) {
-    const {username, signIn} = props;
-    const [inputValue, setInputValue] = useState('')
+import React from 'react'
+
+export default function Navbar(){
+
+
+
+// export default function Navbar(props) {
+//     const {username, signIn} = props;
+//     const [inputValue, setInputValue] = useState('')
     return (
 
         <div>
-            {username && <span>Welcome, {username}!</span> || 
+            {/* {username && <span>Welcome, {username}!</span> || 
             <form onSubmit={(e)=> { e.preventDefault(); signIn(inputValue)}}>
                 <input 
                     name="username" 
@@ -15,7 +20,7 @@ export default function Navbar(props) {
                     value={inputValue} 
                     onChange={(e)=> setInputValue(e.target.value)} />
                 <button>Sign In</button>
-            </form>}
+            </form>} */}
             <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
                 <div className="container-fluid">
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -39,7 +44,11 @@ export default function Navbar(props) {
             </nav>
         </div>
     )
+       
+    
 }
+
+
 
 // how do i want data to flow in the app
 // data in react is top down flow and unidirectional

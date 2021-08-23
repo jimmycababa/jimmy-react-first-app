@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
+import { Route, Switch, Redirect } from 'react-router-dom';
 import Joke from './Joke';
 import './index.css'
 import Navbar from './Navbar';
@@ -18,7 +18,7 @@ function App() {
 
   return (
     
-    <Router>
+    
       <div className="App">
         <Navbar />
         <Switch>
@@ -33,7 +33,7 @@ function App() {
           </Route>
         </Switch>     
     </div>
-    </Router>
+    
     
   );
 }

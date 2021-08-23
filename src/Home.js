@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import { useAuth0 } from '@auth0/auth0-react';
 
 export default function Home() {
@@ -11,13 +11,17 @@ export default function Home() {
         logout,
       } = useAuth0();
     
+      useEffect(()=>{
+        console.log("user: ", user, "isAuthenticated: ", isAuthenticated, "isLoading: ", isLoading)
+      }, [user, isAuthenticated, isLoading])
+
+
       if (isLoading) {
         return <div>Loading...</div>;
       }
       if (error) {
         return <div>Oops... {error.message}</div>;
       }
-    
       if (isAuthenticated) {
 
     return (
